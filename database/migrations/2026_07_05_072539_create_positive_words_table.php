@@ -1,46 +1,32 @@
 <?php
 
-namespace Database\Seeders;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-use Illuminate\Database\Seeder;
-use App\Models\PositiveWord;
-
-class PositiveWordSeeder extends Seeder
+return new class extends Migration
 {
-    public function run(): void
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
-        $words = [
-            'stable',
-            'growth',
-            'improved',
-            'improvement',
-            'recover',
-            'recovery',
-            'resumed',
-            'resume',
-            'efficient',
-            'increase',
-            'expanded',
-            'expansion',
-            'success',
-            'successful',
-            'safe',
-            'secured',
-            'normal',
-            'boost',
-            'strong',
-            'available',
-            'delivered',
-            'export',
-            'import',
-            'innovation',
-            'opportunity',
-        ];
+        Schema::create('positive_words', function (Blueprint $table) {
 
-        foreach ($words as $word) {
-            PositiveWord::firstOrCreate([
-                'word' => $word,
-            ]);
-        }
+            $table->id();
+
+            $table->string('word')->unique();
+
+            $table->timestamps();
+
+        });
     }
-}
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('positive_words');
+    }
+};
