@@ -1,0 +1,540 @@
+/* =====================================================
+   SUPPLY CHAIN RISK MONITORING
+   DARK ENTERPRISE THEME
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --bg:#0f172a;
+    --bg2:#111827;
+    --card:#1e293b;
+    --card2:#273449;
+
+    --primary:#3b82f6;
+    --primary2:#2563eb;
+
+    --success:#10b981;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+    --info:#06b6d4;
+
+    --text:#f8fafc;
+    --text2:#cbd5e1;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
+}
+
+/* =====================================
+BODY
+===================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#374151;
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#4b5563;
+
+}
+
+/* =====================================
+SIDEBAR
+===================================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:285px;
+    height:100vh;
+
+    background:linear-gradient(
+    180deg,
+    #111827,
+    #0f172a
+    );
+
+    border-right:1px solid var(--border);
+
+    overflow-y:auto;
+
+    transition:.35s;
+
+    z-index:9999;
+
+    box-shadow:var(--shadow);
+
+}
+
+.sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#334155;
+
+}
+
+/* =====================================
+LOGO
+===================================== */
+
+.sidebar-header{
+
+    padding:28px 22px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo i{
+
+    font-size:42px;
+
+    color:#38bdf8;
+
+    text-shadow:
+
+    0 0 25px rgba(59,130,246,.45);
+
+}
+
+.logo-text h3{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+.logo-text small{
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+    display:block;
+
+    margin-top:3px;
+
+}
+
+/* =====================================
+MENU TITLE
+===================================== */
+
+.sidebar-title{
+
+    color:#64748b;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+    margin:
+
+    25px
+
+    18px
+
+    12px;
+
+    text-transform:uppercase;
+
+}
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.sidebar-menu{
+
+    padding:18px;
+
+}
+
+.sidebar-menu a{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:14px 18px;
+
+    margin-bottom:8px;
+
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:all .30s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.sidebar-menu a i{
+
+    width:24px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+/* Hover */
+
+.sidebar-menu a:hover{
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:white;
+
+    transform:translateX(6px);
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.sidebar-menu a:hover i{
+
+    transform:scale(1.2);
+
+}
+
+/* Active */
+
+.sidebar-menu a.active{
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    box-shadow:
+        0 10px 30px rgba(59,130,246,.35);
+
+}
+
+.sidebar-menu a.active i{
+
+    color:white;
+
+}
+
+/* Divider */
+
+.sidebar hr{
+
+    border-color:rgba(255,255,255,.08);
+
+    margin:22px 0;
+
+}
+
+/* =====================================================
+CONTENT
+===================================================== */
+
+.content{
+
+    margin-left:285px;
+
+    min-height:100vh;
+
+    background:#0f172a;
+
+    transition:.35s;
+
+}
+
+/* ===========================
+   TOPBAR
+=========================== */
+
+.topbar{
+    height:85px;
+    background:#111827;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 35px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.topbar-left{
+    margin-left:20px;
+}
+
+.topbar-title{
+    color:#ffffff;
+    font-size:32px;
+    font-weight:700;
+    margin:0;
+}
+
+.topbar-subtitle{
+    color:#ffffff !important;
+    font-size:15px;
+    opacity:.85;
+}
+
+.topbar-right{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.topbar-right i{
+    color:#ffffff !important;
+    font-size:24px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.topbar-right i:hover{
+    color:#3b82f6 !important;
+}
+
+.user-name{
+    color:#ffffff !important;
+    font-size:18px;
+    font-weight:700;
+}
+
+.user-status{
+    color:#22c55e !important;
+}
+
+.user-info strong{
+    color:#ffffff !important;
+}
+
+.user-info small{
+    color:#22c55e !important;
+}
+
+.user-avatar{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:700;
+}
+
+/* =====================================================
+BODY
+===================================================== */
+
+.dashboard-body{
+
+    padding:35px;
+
+}
+
+/* =====================================================
+CARD
+===================================================== */
+
+.card{
+
+    background:#1e293b;
+
+    border:none;
+
+    border-radius:22px;
+
+    color:white;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.45);
+
+}
+
+.card-header{
+
+    background:transparent;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    padding:20px;
+
+}
+
+.card-body{
+
+    padding:25px;
+
+}
+
+/* Statistik */
+
+.stat-card{
+
+    background:linear-gradient(
+        135deg,
+        #1e3a8a,
+        #2563eb
+    );
+
+    color:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.stat-card h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.stat-card h6{
+
+    color:#dbeafe;
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+}
+
+.stat-card::after{
+
+    content:'';
+
+    position:absolute;
+
+    right:-25px;
+
+    bottom:-25px;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+}
