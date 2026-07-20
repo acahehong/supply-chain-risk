@@ -1,11 +1,11 @@
 <x-guest-layout>
 
-{{ dd(route('login')) }}
+{{ dd(request()->secure(), url('/login'), route('login'), config('app.url')) }}
 
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="/TESTLOGIN123">
         @csrf
 
         <!-- Email Address -->
