@@ -414,8 +414,8 @@ Shipment Monitor
 
 <div class="col-md-3">
 
-    <a href="{{ route('admin.analysis') }}"
-       class="btn btn-dark w-100 py-3">
+    <a href="{{ route('admin.articles') }}"
+   class="btn btn-dark w-100 py-3">
 
         📰<br>
 

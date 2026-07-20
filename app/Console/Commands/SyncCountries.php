@@ -14,7 +14,7 @@ class SyncCountries extends Command
 
     public function handle()
     {
-        $path = storage_path('app/countries.json');
+        $path = database_path('data/countries.json');
 
         if (!File::exists($path)) {
             $this->error('countries.json tidak ditemukan.');
