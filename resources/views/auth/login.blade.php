@@ -1,7 +1,5 @@
 <x-guest-layout>
 
-{{ dd(request()->secure(), url('/login'), route('login'), config('app.url')) }}
-
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
