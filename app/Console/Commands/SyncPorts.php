@@ -14,7 +14,7 @@ class SyncPorts extends Command
 
     public function handle()
     {
-        $path = storage_path('app/ports/world_ports.csv');
+        $path = database_path('data/world_ports.csv');
 
         if (!file_exists($path)) {
             $this->error('world_ports.csv tidak ditemukan!');
