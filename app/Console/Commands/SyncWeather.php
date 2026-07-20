@@ -15,10 +15,15 @@ class SyncWeather extends Command
 
     public function handle()
     {
-        $ports = Port::all();
+      $ports = Port::whereNotIn('id', function ($query) {
+    $query->select('port_id')
+          ->from('weather_caches');
+})->get();
 
-        $success = 0;
-        $failed = 0;
+$this->info("Remaining ports : ".$ports->count());
+
+$success = 0;
+$failed = 0;
 
         foreach ($ports as $port) {
 
@@ -103,11 +108,11 @@ class SyncWeather extends Command
 
                 );
 
-                $success++;
+              $success++;
 
-                $this->line("[$success] ".$port->name);
+$this->line("[$success/".$ports->count()."] ".$port->name);
 
-                usleep(150000);
+                usleep(50000);
 
             } catch (\Exception $e) {
 

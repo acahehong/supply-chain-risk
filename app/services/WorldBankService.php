@@ -18,7 +18,7 @@ class WorldBankService
         try {
 
            $response = Http::timeout(10)
-                ->retry(1, 500)
+                ->retry(3, 1000)
                 ->acceptJson()
                 ->get($url);
 

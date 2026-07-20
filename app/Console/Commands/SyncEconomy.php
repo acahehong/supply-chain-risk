@@ -29,10 +29,16 @@ class SyncEconomy extends Command
             // Gunakan kode ISO3 langsung (IDN, CHN, USA, dll)
           $data = $service->getCountryData($country->code);
 
-                if ($data['gdp'] === null) {
-                    $this->warn("SKIPPED : {$country->name}");
-                    continue;
-                }
+               if (
+    is_null($data['gdp']) &&
+    is_null($data['inflation']) &&
+    is_null($data['population']) &&
+    is_null($data['exports']) &&
+    is_null($data['imports'])
+) {
+    $this->warn("SKIPPED : {$country->name}");
+    continue;
+}
 
 if (
     is_null($data['gdp']) &&
@@ -63,6 +69,7 @@ EconomicCache::updateOrCreate(
             );
 
             $this->line("✔ {$country->name} selesai");
+            usleep(200000); // 0.2 detik
         }
 
         $this->info('');

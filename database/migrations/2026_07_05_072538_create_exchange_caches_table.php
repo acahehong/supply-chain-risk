@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('exchange_caches', function (Blueprint $table) {
+        Schema::create('currency_caches', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('exchange_caches');
+        Schema::dropIfExists('currency_caches');
     }
 };

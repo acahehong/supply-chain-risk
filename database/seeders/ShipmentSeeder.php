@@ -14,15 +14,18 @@ class ShipmentSeeder extends Seeder
 
         $ports = Port::take(10)->get();
 
+        if ($ports->count() < 2) {
+            return;
+        }
+
         for ($i = 0; $i < 10; $i++) {
 
             Shipment::create([
+                'tracking_code' => 'SHP'.str_pad($i + 1, 4, '0', STR_PAD_LEFT),
 
-                'tracking_code' => 'SHP'.str_pad($i+1,4,'0',STR_PAD_LEFT),
+                'origin_port_id' => $ports[$i % $ports->count()]->id,
 
-                'origin_port_id' => $ports[$i]->id,
-
-                'destination_port_id' => $ports[(($i+1)%10)]->id,
+                'destination_port_id' => $ports[($i + 1) % $ports->count()]->id,
 
                 'departure_date' => now()->subDays(rand(1,5)),
 
@@ -37,10 +40,7 @@ class ShipmentSeeder extends Seeder
                     'Possible Delay',
                     'Delayed'
                 ])->random(),
-
             ]);
-
         }
-
     }
 }
