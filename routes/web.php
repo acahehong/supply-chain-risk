@@ -14,7 +14,6 @@ use App\Http\Controllers\ShipmentMonitoringController;
 use App\Http\Controllers\WatchlistController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\RiskController;
-use App\Http\Controllers\Admin\ArticleAnalysisController;
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
@@ -124,9 +123,6 @@ Route::middleware(['auth'])->group(function () {
     */
 
     Route::prefix('admin')->group(function () {
-
-        Route::get('/analysis', [ArticleAnalysisController::class, 'index'])
-    ->name('admin.analysis');
 
         Route::get('/', [AdminController::class, 'dashboard'])
             ->name('admin.dashboard');
